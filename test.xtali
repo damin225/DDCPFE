@@ -1,0 +1,42 @@
+2    9					       / NPH, NPart /
+3    2                                         / crystalID (1:FCC, 2:BCC, 3:HCP) for different phases/
+20.4, 0.05, 1.0, 3.7, 30.8, 0.0, 5.0E10, 50    / h0,xm,gam0,tausi,taus0,xms, gamss0, crss0 /
+
+1.381d-23                                      /Boltzman constant/
+
+1.50303d-20	1.50303d-20	1.50303d-20	1.50303d-20             / detF for phase 1 /     detF, J
+5.010127d-28	5.010127d-28	5.010127d-28	5.010127d-28	        / detV for phase 1 /     detV, m^3
+5.0d12		5.0d12		5.0d12		5.0d12			/ ddavg for phase 1 /    rho_m.  m^-2
+1.0d11		1.0d11		1.0d11		1.0d11			/ vid for phase 1 /      v_id,  HZ
+2.86d-10	2.86d-10	2.86d-10	2.86d-10		/ burgers for phase 1 /  m
+1.5d8		1.5d8		1.5d8		1.5d8			/ sref for phase 1 /     hat s, Pa
+200.0d0		200.0d0		200.0d0		200.0d0			/ sita for phase 1 /     hat theta_ref, K
+300.0d0 	300.0d0		300.0d0		300.0d0			/ sita_ref for phase 1 / hat theta    , K
+2.2225d8	2.2225d8	2.2225d8	2.2225d8		/ s0ref for phase 1 /    s_298K,  Pa
+5.2d6		5.2d6		5.2d6		5.2d6			/ k1 for phase 1 /       k_1   ,  m^-1
+3.5d-2		3.5d-2		3.5d-2		3.5d-2			/ gref for phase 1 /     g     ,  J
+2.3d8		2.3d8		2.3d8		2.3d8			/ Drag for phase 1 /     D     ,  Pa
+5.0d1		5.0d1		5.0d1		5.0d1			/ Href for phase 1 /     no use
+14.0d0		14.0d0		14.0d0		14.0d0			/ qsub for phase 1 /     coefficient, no unit
+1.15d11		1.15d11		1.15d11		1.15d11			/ shmu for phase 1 /     shear modulus,  Pa
+5.0d8		5.0d8		5.0d8		5.0d8			/ crss0in for phase 1 /	 initial shear resistance, Pa
+
+1.50303d-20                                     / detF for phase 2 /  		detF, J
+5.010127d-28					/ detV for phase 2 /  		detV, m^3
+5.0d12						/ ddavg for phase 2 /  		rho_m.  m^-2
+1.0d11						/ vid for phase 2 /       	v_id,  HZ
+2.86d-10					/ burgers for phase 2 /		m
+1.5d8						/ sref for phase 2 /		hat s, Pa
+200.0d0						/ sita for phase 2 /		hat theta_ref, K
+300.0d0 					/ sita_ref for phase 2 /	hat theta    , K
+2.2225d8					/ s0ref for phase 2 /		s_298K,  Pa
+5.2d6						/ k1 for phase 2 /		k_1   ,  m^-1
+3.5d-2						/ gref for phase 2 /		g     ,  J
+2.3d8						/ Drag for phase 2 /		D     ,  Pa
+5.0d1						/ Href for phase 2 /		no use
+14.0d0						/ qsub for phase 2 /		coefficient, no unit
+1.15d11						/ shmu for phase 2 /		shear modulus,  Pa
+5.0d8						/ crss0in for phase 2 /		initial shear resistance, Pa
+
+20  5.0d-4                          	       / maxIterState, tolerState /
+50  10.0d-4                                     / maxIterNewt, tolerNewt (absolute tolerance) /
