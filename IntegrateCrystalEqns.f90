@@ -1092,7 +1092,7 @@ SUBROUTINE IntegrateCrystalEqns2(s_ij, stress, estran, kappa, mu,      &
 
 !	keep track of state iteration and check number of iterations
     if (iterState .ge. iterCounterS) then
-        Write(FILE_O,*) 'Stress and Strength Solve: iters > maxIters for element', noel
+        Write(FILE_O,*) 'Stress and Strength Solve: iters > maxIters for element', noel, 'at kinc=', kinc
         ierr = XTAL_MAX_ITERS_HIT
         return
     endif

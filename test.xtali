@@ -39,4 +39,4 @@
 5.0d8						/ crss0in for phase 2 /		initial shear resistance, Pa
 
 20  5.0d-4                          	       / maxIterState, tolerState /
-50  10.0d-4                                     / maxIterNewt, tolerNewt (absolute tolerance) /
+50  1.0d-3                                     / maxIterNewt, tolerNewt (absolute tolerance) /

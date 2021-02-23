@@ -9,7 +9,7 @@ A = transpose(reshape(A,[2, length(A)/2]));
 A(:,2) = A(:,2)./1e6; % pa --> Mpa
 
 % open stress-strain data from Yang's model
-fid2 = fopen('~/damin_research/NASA/Damin/DDEHM/UMAT_Hex_phase/Sim.dat','r');
+fid2 = fopen('~/damin_research/NASA/Damin/DDEHM/UMAT_increased_partition/Sim.dat','r');
 B = fscanf(fid2,'%f');
 B = transpose(reshape(B,[2, length(B)/2]));
 B(:,2) = B(:,2)./1e6; % pa --> Mpa
@@ -20,7 +20,7 @@ figure(1)
 hold on
 grid on
 box on
-plot(A(:,1),A(:,2),'-.r','LineWidth',2);
+plot(A(:,1),A(:,2),'r','LineWidth',2);
 plot(B(:,1),B(:,2),'-.k','LineWidth',2);
 legend('reference model','DDEHM','location','best')
 title('RVE9 tension')

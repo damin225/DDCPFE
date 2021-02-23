@@ -927,14 +927,15 @@ SUBROUTINE Read_ElasMod( )
 	use WorkDir
 	
 	implicit none
-	character*80		:: filename
+	character*255		:: filename
 	real(kind=8)		:: elascoef1(5), elascoef2(3)
-	real(kind=8)		:: ELASMOD0(6,6), ELASMOD1(6,6), ELASMOD2(6,6), elasModTmp(6,6)
+	real(kind=8)		:: ELASMOD0(6,6), ELASMOD1(6,6), ELASMOD2(6,6), elasModTmp(6,6), Lijkltemp(6,6)
 		
-	integer(kind=8) 	:: i, i1, i2, i3, i4, j1, j2, j3, j4, ii1, ii2, jj1, jj2, ip, mymod
+	integer(kind=8) 	:: i, i1, i2, i3, i4, j1, j2, j3, j4, ii1, ii2, jj1, jj2, ip, mymod, switch(6), ii, jj
 	real(kind=8)        :: sps, cps, sth, cth, sph, cph, crot(nsd,nsd), RotM6x6(6, 6) 
 !-----------------------------------------------------------------------
-
+	switch = (/1,2,3,6,5,4/)
+	
 !	open elasmod.dat file
 	filename = adjustl(trim(outdir))//'elasmod.dat'
 	!filename = './elasmod.dat'
@@ -1016,7 +1017,14 @@ SUBROUTINE Read_ElasMod( )
 		
 		!	rotate elastic moduli
 		elasModTmp = MATMUL(RotM6x6, elasMod0) 
+		Lijkltemp = 0.d0
 		Lijkl(:,:,ip) = MATMUL(elasModTmp, TRANSPOSE(RotM6x6) )*1.d6 	! MPa->Pa 
+		Lijkltemp = Lijkl(:,:,ip)
+		do ii=1,6
+			do jj=1,6
+				Lijkl(ii,jj,ip) = Lijkltemp(switch(ii),switch(jj))
+			end do
+		end do
 		
 		!	echo data for debugging
 		if (debug == 1) then
@@ -1026,7 +1034,6 @@ SUBROUTINE Read_ElasMod( )
 	end do
 
 end subroutine
-
 
 !*********************************
 SUBROUTINE CrystalCloseIOFiles( )
