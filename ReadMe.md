@@ -3,6 +3,8 @@
 
 This folder contains the codes and input files for reference DD-CPFE simulation. The code is developed based on DDEHM code, the idea is to apply the consititutive relation from DDEHM for every qudrature point. See formulation.pdf for theory details.
 
+The code is developed under small deformation assumption. Please be careful when using it under large deformation (i.e., strain > 5%).
+
 **What are the necessary input files?**
 1. ABAQUS inp file (e.g. Direct_9grain.inp). Note that for a quasi-2D microstructure, the DOF of the out-of-plane direction is constrained.
 2. elasmod.dat: elastic coefficients for the material, which could contain the elastic coefficients for multiple phases.
